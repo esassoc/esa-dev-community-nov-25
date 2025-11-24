@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GameService } from '../game-service/game-service';
 
 @Component({
   selector: 'app-game-scoreboard',
@@ -6,6 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './game-scoreboard.html',
   styleUrl: './game-scoreboard.scss',
 })
-export class GameScoreboard {
-
-}
+export class GameScoreboard {}

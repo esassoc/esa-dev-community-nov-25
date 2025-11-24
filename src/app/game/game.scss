@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: light-dark(#ffffff, #0f0f0f);
+  color: light-dark(#0f0f0f, #ffffff);
+}
+
+app-game-scoreboard {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+app-game-canvas {
+  grid-row: 1;
+  grid-column: 1;
+}

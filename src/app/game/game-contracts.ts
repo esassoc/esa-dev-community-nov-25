@@ -12,9 +12,8 @@ export interface IGameService {
   startGame(): void;
   stopGame(): void;
   resetGame(): void;
-  catch(objectId: string): void;
-  miss(objectId: string): void;
-  clickedObject(objectId: string): void;
+  clickedGameObject(objectId: string): void;
+  setColorScheme(scheme: 'light' | 'dark'): void;
   gameObjects: Signal<IGameObject[]>;
   gameStats: Signal<IGameStats>;
 }

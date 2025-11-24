@@ -8,6 +8,9 @@ export class GameService implements IGameService {
   gameObjects: Signal<IGameObject[]> = signal<IGameObject[]>([]);
   gameStats: Signal<IGameStats> = signal<IGameStats>({ score: 0, caught: 0, missed: 0 });
 
+  // For other team's bonuses
+  colorScheme = signal<'light' | 'dark'>('light');
+
   startGame(): void {
     throw new Error('Method not implemented.');
   }
@@ -17,13 +20,12 @@ export class GameService implements IGameService {
   resetGame(): void {
     throw new Error('Method not implemented.');
   }
-  clickedObject(objectId: string): void {
+  clickedGameObject(objectId: string): void {
     throw new Error('Method not implemented.');
   }
-  catch(objectId: string): void {
-    throw new Error('Method not implemented.');
-  }
-  miss(objectId: string): void {
-    throw new Error('Method not implemented.');
+
+  // For other team's bonuses
+  setColorScheme(scheme: 'light' | 'dark'): void {
+    this.colorScheme.set(scheme);
   }
 }
