@@ -1,7 +1,7 @@
 import { Signal } from '@angular/core';
 
 export interface IGameObject {
-  id: string;
+  id: string; // unique ID (Guid?)
   objectType: 'coin' | 'bomb';
   xPosition: number; // 0 = left, 100 = right (percentage)
   yPosition: number; // 0 = top, 100 = bottom (percentage)
