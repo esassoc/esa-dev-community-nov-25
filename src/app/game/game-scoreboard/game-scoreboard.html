@@ -1,0 +1,33 @@
+<div
+  class="scoreboard"
+  role="region"
+  aria-label="Game scoreboard"
+  [class.dark]="colorScheme() === 'dark'"
+>
+  <!-- Accessible heading for screen reader users -->
+  <h2 class="sr-only">Game scoreboard</h2>
+
+  <div class="stats" aria-live="polite" aria-atomic="true">
+    <div class="stat">
+      <div class="label">Score</div>
+      <div class="value">{{ stats().score }}</div>
+    </div>
+    <div class="stat">
+      <div class="label">Caught</div>
+      <div class="value">{{ stats().caught }}</div>
+    </div>
+    <div class="stat">
+      <div class="label">Missed</div>
+      <div class="value">{{ stats().missed }}</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button (click)="start()">Start</button>
+    <button (click)="stop()">Stop</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="toggleTheme()" [attr.aria-pressed]="colorScheme() === 'dark'">
+      {{ colorScheme() === 'dark' ? 'Switch to light' : 'Switch to dark' }}
+    </button>
+  </div>
+</div>
