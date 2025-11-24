@@ -1,0 +1,61 @@
+.game-canvas {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 2px dashed rgba(0,0,0,0.1);
+	background: var(--canvas-bg, #f8f8f8);
+	overflow: hidden;
+}
+
+.game-object {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	user-select: none;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.game-object-coin {
+	background: gold;
+	color: #3a3a3a;
+	border: 2px solid #e6b800;
+}
+
+.game-object-bomb {
+	background: #333;
+	color: #fff;
+	border: 2px solid #111;
+}
+
+/* Bomb pulse: subtle grow/shrink loop */
+.bomb-pulse {
+	animation: bombPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes bombPulse {
+	0% { transform: translate(-50%, -50%) scale(1); }
+	50% { transform: translate(-50%, -50%) scale(1.25); }
+	100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Coin zoom: plays once when clicked and moves the coin off-screen (upwards/right) */
+.coin-zoom {
+	animation: coinZoom 0.9s cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+@keyframes coinZoom {
+	0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+	60% { transform: translate(-50%, -150%) scale(1.6); opacity: 0.9; }
+	100% { transform: translate(200%, -300%) scale(2.2); opacity: 0; }
+}
+
+.obj-label {
+	font-size: 12px;
+	text-transform: capitalize;
+}
