@@ -1,0 +1,104 @@
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  width: 240px;
+  background: #f6f6f6;
+  color: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  &.dark {
+    background: #111;
+    color: #eee;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+
+    .stat {
+      text-align: center;
+
+      .label {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      .value {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 8px;
+
+    button {
+      flex: 1 1 auto;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 6px;
+      background: #1976d2;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      /* Visible focus for keyboard users */
+      &:focus-visible {
+        outline: 3px solid #ffbf47;
+        outline-offset: 2px;
+      }
+    }
+
+    button:nth-child(2) {
+      background: #d32f2f;
+    }
+
+    button:nth-child(3) {
+      background: #6b6b6b;
+    }
+
+    button:nth-child(4) {
+      background: #555;
+    }
+  }
+}
+
+/* Visually hidden helper for accessible headings */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Dark mode button contrast adjustments */
+.scoreboard.dark {
+  .controls {
+    button:nth-child(1) {
+      background: #1565c0;
+    }
+    button:nth-child(2) {
+      background: #c62828;
+    }
+    button:nth-child(3) {
+      background: #4f4f4f;
+    }
+    button:nth-child(4) {
+      background: #2f2f2f;
+    }
+  }
+}
