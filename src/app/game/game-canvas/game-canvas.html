@@ -1,0 +1,11 @@
+<div class="game-canvas">
+    <!-- Render each game object from the GameService using native @for control flow -->
+
+    @for(obj of gameObjects; track obj.id) {
+    <div class="game-object" role="button" aria-label="Game object {{obj.objectType}}" (click)="onObjectClick(obj.id)" [style.left.%]="obj.xPosition"
+        [style.top.%]="obj.yPosition" [class.game-object-coin]="obj.objectType === 'coin'" [class.game-object-bomb]="obj.objectType === 'bomb'"
+        [class.bomb-pulse]="obj.objectType === 'bomb'" [class.coin-zoom]="obj.objectType === 'coin' && isZoomed(obj.id)">
+        <span class="obj-label">{{obj.objectType}}</span>
+    </div>
+    }
+</div>
