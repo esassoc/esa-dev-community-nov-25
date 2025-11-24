@@ -107,3 +107,27 @@
     }
   }
 }
+
+/* External pause/resume fixed button */
+.pause-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+
+  .pause-label {
+    font-weight: 600;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 3px;
+  }
+}

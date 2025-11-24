@@ -33,6 +33,7 @@ export class GameScoreboard {
   private velocity = { x: 160, y: 120 }; // pixels per second
   private rafId = 0;
   private lastTs = 0;
+  paused = signal(false);
 
   @ViewChild('board', { read: ElementRef }) boardRef!: ElementRef<HTMLElement>;
 
@@ -47,6 +48,12 @@ export class GameScoreboard {
   }
 
   private frame = (ts: number) => {
+    if (this.paused()) {
+      this.lastTs = ts;
+      this.rafId = requestAnimationFrame(this.frame);
+      return;
+    }
+
     const dt = Math.min(0.05, (ts - this.lastTs) / 1000); // clamp dt
     this.lastTs = ts;
 
@@ -83,6 +90,10 @@ export class GameScoreboard {
     this.pos.set({ x, y });
     this.rafId = requestAnimationFrame(this.frame);
   };
+
+  togglePause() {
+    this.paused.update((p) => !p);
+  }
 
   start() {
     this.gameService.startGame();

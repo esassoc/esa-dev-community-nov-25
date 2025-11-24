@@ -41,3 +41,14 @@
     </button>
   </div>
 </div>
+
+<!-- External pause/resume control (fixed) -->
+<button
+  class="pause-toggle"
+  type="button"
+  (click)="togglePause()"
+  [attr.aria-pressed]="paused()"
+  [attr.aria-label]="paused() ? 'Resume scoreboard movement' : 'Pause scoreboard movement'"
+>
+  <span class="pause-label">{{ paused() ? 'Resume' : 'Pause' }}</span>
+</button>
