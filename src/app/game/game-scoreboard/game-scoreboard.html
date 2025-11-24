@@ -1,8 +1,10 @@
 <div
+  #board
   class="scoreboard"
   role="region"
   aria-label="Game scoreboard"
   [class.dark]="colorScheme() === 'dark'"
+  [style.transform]="'translate(' + pos().x + 'px,' + pos().y + 'px)'"
 >
   <!-- Accessible heading for screen reader users -->
   <h2 class="sr-only">Game scoreboard</h2>
