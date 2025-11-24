@@ -1,0 +1,33 @@
+:host {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+app-head,
+app-torso,
+app-legs {
+  position: relative;
+  display: flex;
+  height: 33.33vh;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 10px;
+    left: 33.33%;
+    top: -5px;
+    background-color: #000;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 10px;
+    top: -5px;
+    right: 33.33%;
+    background-color: #000;
+  }
+}
