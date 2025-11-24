@@ -28,3 +28,6 @@ npm  start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+# It worked!
+![Gif of resulting game](esa-dev-community-nov-2025-game.gif "Gif of resulting game")
