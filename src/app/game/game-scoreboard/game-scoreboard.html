@@ -22,11 +22,19 @@
     </div>
   </div>
 
+  <!-- Explicit live announcer for screen readers -->
+  <div class="sr-only" aria-live="polite">{{ liveMessage() }}</div>
+
   <div class="controls">
-    <button (click)="start()">Start</button>
-    <button (click)="stop()">Stop</button>
-    <button (click)="reset()">Reset</button>
-    <button (click)="toggleTheme()" [attr.aria-pressed]="colorScheme() === 'dark'">
+    <button type="button" (click)="start()">Start</button>
+    <button type="button" (click)="stop()">Stop</button>
+    <button type="button" (click)="reset()">Reset</button>
+    <button
+      type="button"
+      (click)="toggleTheme()"
+      [attr.aria-pressed]="colorScheme() === 'dark'"
+      [attr.aria-label]="colorScheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
       {{ colorScheme() === 'dark' ? 'Switch to light' : 'Switch to dark' }}
     </button>
   </div>

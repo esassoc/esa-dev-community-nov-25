@@ -13,6 +13,11 @@ export class GameScoreboard {
   // Expose stats as computed signals for the template
   stats = computed(() => this.gameService.gameStats());
   colorScheme = computed(() => this.gameService.colorScheme());
+  // Combined live message for screen readers
+  liveMessage = computed(() => {
+    const s = this.stats();
+    return `Score ${s.score}. Caught ${s.caught}. Missed ${s.missed}.`;
+  });
 
   start() {
     this.gameService.startGame();
