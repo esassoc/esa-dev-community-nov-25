@@ -8,7 +8,7 @@ Inform the `GameService` on click of the `IGameObjects`
 Style the `bomb` and `coin` types of GameObjects differently
 
 Bonus time:
-Implement styles for Dark/Light mode, e.g.:
+1. Implement styles for Dark/Light mode, e.g.:
 
 ```css
 div {
@@ -17,4 +17,4 @@ div {
 }
 ```
 
-Make it not easy? (falling targets? Various sizes? etc?)
+2. Make it not easy? (falling targets? Various sizes? etc?)

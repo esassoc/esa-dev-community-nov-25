@@ -7,7 +7,7 @@ Display three numbers (`IGameStats`) from the `GameService`
 User Interface for controls that call service methods for `startGame`, `stopGame`, and `resetGame`
 
 Bonus:
-Implement a control for toggling Dark/Light mode through the `GameService` and style UI for each mode, e.g.:
+1. Implement a control for toggling Dark/Light mode through the `GameService` and style UI for each mode, e.g.:
 
 ```css
 div {
