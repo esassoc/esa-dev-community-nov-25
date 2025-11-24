@@ -1,6 +1,13 @@
 # Esa Dev Community November 2025
 
 ## Lets make a game in Angular!
+The Game:
+A simple click on "object" game. Clicking on objects adds to a "score" that is displayed on the page that has simple controls (buttons) for starting, stopping and resetting the game. Minimal instructions were provided for styling, style it however you want!
+
+Thought experiments?
+* Should we prohibit use of copilot?
+* Should we exclusively use copilot prompts?
+
 Format:
 * The entire group will be split into three breakout rooms at random (besides a few screen-sharers).
 * Each room will implement a segment of the code that relies on the other segments. Some minimal contracts are defined in `game-contracts.ts`.
