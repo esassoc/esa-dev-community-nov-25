@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Head } from './body/head/head';
-import { Legs } from './body/legs/legs';
-import { Torso } from './body/torso/torso';
+import { GameCanvas } from './game/game-canvas/game-canvas';
+import { Game } from './game/game';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Head, Legs, Torso],
+  imports: [Game],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
